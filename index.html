@@ -16,7 +16,7 @@
 	<link rel="stylesheet" type="text/css" href="css/gradient.css"/>
 	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"/>
 	<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.6/animate.css"/>
-
+	<link rel="stylesheet" href="css/style.css"/>
 	<!--[if IE]>
 	<script type="text/javascript">
 		var console = { log: function() {} };
@@ -34,45 +34,51 @@
 			$('#fullpage').fullpage();
 		});
 	</script>
+	<script src="http://maps.googleapis.com/maps/api/js?v=3.exp"></script>
+	<script>
+		var map;
+		function initialize() {
+			var mapOptions = {
+				zoom: 8,
+				center: new google.maps.LatLng(-34.397, 150.644)
+			};
+			map = new google.maps.Map(document.getElementById('map-canvas'),
+					mapOptions);
+		}
+
+		google.maps.event.addDomListener(window, 'load', initialize);
+
+	</script>
 	<style>
-		h1, h2, h3, h4, h5, h6{
-			font-family: 'Ubuntu Mono', sans-serif;
-			
-		}
-		p{
-			font-family: 'Ubuntu', serif;
-			
-		}
-		a{
-			font-family: 'Ubuntu', serif;
-			color:#fff;
-			
-		}
-		nav ul li h2 a{
-			font-size:30px;
-			text-decoration: none;
-			
-		}
-		.navbar-default, .navbar-fixed-top{
-			background-color:transparent;
-			border:none;
-			
-		}
+
 	</style>
 </head>
 <body class="animated fadeIn">
 
 <!--the actual page content-->
 <div id="fullpage">
-	<!--<nav class="navbar navbar-default navbar-fixed-top">-->
-		<!--<div class="container">-->
-			<!--<ul class="list-inline">-->
-				<!--<li><h2><a href="#section1">Types</a></h2></li>-->
-				<!--<li><h2><a href="#section2">About</a></h2></li>-->
-				<!--<li><h2><a href="#section3">Contact</a></h2></li>-->
-			<!--</ul>-->
-		<!--</div>-->
-	<!--</nav>-->
+	<nav class="navbar navbar-default navbar-fixed-top">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+
+			</div>
+			<div id="navbar" class="navbar-collapse collapse">
+				<ul class="nav navbar-nav">
+					<li class="active"><a href="#">Home</a></li>
+					<li><a href="#about">About</a></li>
+					<li><a href="#contact">Contact</a></li>
+				</ul>
+				<hr class="hidden-md hidden-lg"/>
+			</div><!--/.nav-collapse -->
+		</div>
+	</nav>
+
 	<div class="section " id="section0">
 		<!--the logo-->
 		<h1 class=" animated bounceIn">
@@ -88,10 +94,11 @@
 	<div class="section" id="section1">
 		<!--slide1-->
 		<div class="slide" id="slide1">
-			<h1>Coffee Blend #1</h1>
-			<br/>
-			<img src="http://placehold.it/750x550">
-			<br/>
+			<h2>Coffee Blend #1</h2>
+			<hr/>
+
+			<img src="http://placehold.it/350x150">
+
 			<button class="btn btn-lg btn-primary">
 				<i class="fa fa-coffee fa-2x"></i>
 				<br/>
@@ -100,10 +107,10 @@
 		</div>
 		<!--slide2-->
 		<div class="slide" id="slide2">
-			<h1>Coffee Blend #2</h1>
-			<br/>
-			<img src="http://placehold.it/750x550">
-			<br/>
+			<h2>Coffee Blend #2</h2>
+			<hr/>
+
+			<img src="http://placehold.it/350x150">
 			<button class="btn btn-lg btn-primary">
 				<i class="fa fa-coffee fa-2x"></i>
 				<br/>
@@ -112,10 +119,10 @@
 		</div>
 		<!--slide3-->
 		<div class="slide" id="slide3">
-			<h1>Coffee Blend #3</h1>
-			<br/>
-			<img src="http://placehold.it/750x550">
-			<br/>
+			<h2>Coffee Blend #3</h2>
+			<hr/>
+			<img src="http://placehold.it/350x150">
+
 			<button class="btn btn-lg btn-primary">
 				<i class="fa fa-coffee fa-2x"></i>
 				<br/>
@@ -126,7 +133,7 @@
 	<!--the about section-->
 	<div class="section" id="section2">
 	<div class="intro">
-		<h1>About Us</h1>
+		<h2>About Us</h2>
 		<p>We roast our own blends and they are amazing!</p>
 		<br/>
 		<div class="container">
@@ -161,13 +168,10 @@
 	</div>
 	</div>
 	<!--the contact section-->
-	<div class="section" id="section3">
+	<div class="section contact" id="section3">
 		<div class="intro">
-			<h1>Contact Us To Find Out More!</h1>
-			<br/>
-
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate doloribus eligendi, eum molestias odit perspiciatis quidem quos voluptates. Aspernatur aut, autem debitis dolorum eius fugit laborum nemo sequi unde voluptatum.</p>
-			<br/>
+			<h2>Contact Us To Find Out More!</h2>
+			<hr/>
 						<div class="container">
 							<div class="row">
 								<div class="col-md-8">
@@ -204,7 +208,7 @@
 													<div class="form-group">
 														<label for="name">
 															Message</label>
-                            								<textarea name="message" id="message" class="form-control" rows="9" cols="25" required="required"
+                            								<textarea name="message" id="message" class="form-control" rows="4" cols="25" required="required"
 															  placeholder="Message"></textarea>
 													</div>
 												</div>
@@ -217,26 +221,50 @@
 
 								</div>
 								<div class="col-md-4">
-									<form>
-										<legend><span class="fa fa-globe"></span> Our office</legend>
-										<address>
-											<strong>Twitter, Inc.</strong><br>
-											795 Folsom Ave, Suite 600<br>
-											San Francisco, CA 94107<br>
-											<abbr title="Phone">
-												P:</abbr>
-											(123) 456-7890
-										</address>
-										<address>
-											<strong>Full Name</strong><br>
-											<a href="mailto:#">first.last@example.com</a>
-										</address>
-									</form>
+									<div id="map-canvas"></div>
 								</div>
 							</div>
 						</div>
+					<hr/>
 					</div>
 				</div>
+	<!--the about section-->
+	<div class="section" id="section4">
+		<div class="intro">
+			<h2>Follow Us</h2>
+			<hr/>
+			<p>Watch out for our free offers</p>
+			<br/>
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<div class="row">
+							<div class="col-sm-6 col-md-6">
+								<hr/>
+								<p>Want Free Coffee?</p>
+								<hr/>
+								<button class="btn btn-primary">
+									<i class="fa fa-facebook fa-2x"></i>
+								</button>
+								
+							</div>
+							<div class="col-sm-6 col-md-6">
+								<hr/>
+								<p>Check out what the buzz is about!</p>
+								<hr/>
+								<button class="btn btn-primary">
+									<i class="fa fa-twitter fa-2x"></i>
+								</button>
+								
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+			<hr/>
+		</div>
+	</div>
 			</div>
 
 <!--the end page content-->

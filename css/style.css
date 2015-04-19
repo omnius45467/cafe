@@ -1,0 +1,55 @@
+h1, h2, h3, h4, h5, h6{
+    font-family: 'Ubuntu Mono', sans-serif;
+    
+}
+h2, h3, h4, h5, h6{
+    font-size:50px;
+    color:#fff;
+}
+.intro p{
+    font-size:1em;
+    
+}
+p{
+    font-family: 'Ubuntu', serif;
+    font-size:1em;
+}
+a{
+    font-family: 'Ubuntu', serif;
+    color:#fff;
+
+}
+nav ul li h2 a{
+    font-size:30px;
+    text-decoration: none;
+
+}
+.navbar-default, .navbar-fixed-top{
+    background-color:transparent;
+    border:none;
+
+}
+
+.contact{
+    /*padding:50px;*/
+    
+}
+img{
+    box-shadow:5px 5px 50px #333;
+    margin:20px;
+    
+}
+button, .btn, .btn-primary{
+    background:transparent;
+    color:#333;
+    border:none;
+    border-radius:0;
+    box-shadow:5px 5px 50px #333;
+    
+}
+button, .navbar-toggle, .collapsed{
+    border:none;
+    border-radius:0;
+    background:transparent;
+    
+}
